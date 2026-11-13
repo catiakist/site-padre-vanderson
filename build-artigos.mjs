@@ -61,6 +61,7 @@ const artigos = files.map(f=>{
     tag: data.tag || "Artigo",
     image: img,
     excerpt: data.excerpt || body.trim().split("\n").find(Boolean)?.replace(/[#>*]/g,"").slice(0,140) || "",
+    anexo: (data.anexo||"").replace(/^\//,""),
     readingMin: Math.max(1, Math.round(words/200)),
     html
   };

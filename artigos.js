@@ -28,6 +28,7 @@
       + '<h1 class="artigo__title">'+esc(a.title)+'</h1>'
       + img
       + '<div class="artigo__body">'+a.html+'</div>'
+      + (a.anexo ? '<p class="artigo__pdf"><a class="btn btn--wine" href="'+esc(a.anexo)+'" target="_blank" rel="noopener">Baixar PDF</a></p>' : '')
       + '<p class="artigo__back"><a class="textlink" href="artigos.html">&larr; Ver todos os artigos</a></p>';
   }
 })();

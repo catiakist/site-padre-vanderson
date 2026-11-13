@@ -24,6 +24,7 @@ collections:
       - { label: "Imagem de capa", name: "image", widget: "image", required: false }
       - { label: "Resumo (1 a 2 linhas)", name: "excerpt", widget: "text", required: false }
       - { label: "Texto do artigo", name: "body", widget: "markdown" }
+      - { label: "Anexo em PDF (opcional)", name: "anexo", widget: "file", required: false, hint: "Envie um PDF para a pessoa baixar. Aparece um botao Baixar PDF no artigo." }
 
   # ---------- CONTEÚDO DAS SEÇÕES ----------
   - name: "conteudo"
