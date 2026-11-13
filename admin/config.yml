@@ -103,3 +103,15 @@ collections:
           - { label: "YouTube", name: "youtube", widget: "string" }
           - { label: "Instagram", name: "instagram", widget: "string" }
           - { label: "Canal do WhatsApp", name: "whatsapp_canal", widget: "string" }
+      - name: "dev_saomiguel"
+        label: "Devoção: Consagração a São Miguel"
+        file: "content/config/dev-saomiguel.json"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Texto da devoção", name: "corpo", widget: "markdown", required: false, hint: "Deixe em branco por enquanto; preencha quando quiser publicar." }
+      - name: "dev_novena"
+        label: "Devoção: Novena a N. Sra. das Graças"
+        file: "content/config/dev-novena.json"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Texto da devoção", name: "corpo", widget: "markdown", required: false, hint: "Deixe em branco por enquanto; preencha quando quiser publicar." }

@@ -67,3 +67,30 @@ for (const [from,to] of GLOBAL){ if(to) html = html.split(from).join(to); }
 
 writeFileSync("index.html", html);
 console.log("index.html gerado. Encontros:", (agenda.encontros||[]).length, "| Orações:", (oracoes.lista||[]).length);
+
+
+/* ---- Devoções (gera devocoes-data.js) ---- */
+function devInline(s){ return esc(s)
+  .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+  .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+  .replace(/(^|[^*])\*([^*]+)\*(?!\*)/g,"$1<em>$2</em>"); }
+function devMd(md){
+  const lines=String(md||"").replace(/\r\n/g,"\n").split("\n"); const out=[]; let para=[],list=[],quote=[];
+  const fP=()=>{ if(para.length){ out.push("<p>"+devInline(para.join(" "))+"</p>"); para=[]; } };
+  const fL=()=>{ if(list.length){ out.push("<ul>"+list.map(x=>"<li>"+devInline(x)+"</li>").join("")+"</ul>"); list=[]; } };
+  const fQ=()=>{ if(quote.length){ out.push("<blockquote>"+devInline(quote.join(" "))+"</blockquote>"); quote=[]; } };
+  const fA=()=>{ fP(); fL(); fQ(); };
+  for(const raw of lines){ const line=raw.trimEnd(); if(!line.trim()){ fA(); continue; } let m;
+    if(m=line.match(/^(#{1,4})\s+(.*)$/)){ fA(); const lvl=Math.min(m[1].length+1,4); out.push("<h"+lvl+">"+devInline(m[2])+"</h"+lvl+">"); continue; }
+    if(m=line.match(/^>\s?(.*)$/)){ fP(); fL(); quote.push(m[1]); continue; }
+    if(m=line.match(/^[-*]\s+(.*)$/)){ fP(); fQ(); list.push(m[1]); continue; }
+    fL(); fQ(); para.push(line.trim()); }
+  fA(); return out.join("\n");
+}
+const _dev = {};
+for(const [k,f] of [["saomiguel","dev-saomiguel.json"],["novena","dev-novena.json"]]){
+  const o = cfg(f, {});
+  _dev[k] = { titulo: o.titulo || "", html: devMd(o.corpo||"") };
+}
+writeFileSync("devocoes-data.js", "/* Gerado por build-site.mjs — nao edite a mao. */\nwindow.DEVOCOES = "+JSON.stringify(_dev)+";\n");
+console.log("devocoes-data.js gerado.");
