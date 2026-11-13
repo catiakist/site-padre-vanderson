@@ -1,25 +1,25 @@
 {
   "encontros": [
     {
-      "dia": "12",
-      "mes": "Jul",
-      "titulo": "Adoração ao Santíssimo",
-      "descricao": "Uma hora de silêncio, música e oração diante do Santíssimo Sacramento.",
-      "hora": "19h30"
+      "dia": "14",
+      "mes": "Nov",
+      "titulo": "Missa Com. São Marcos",
+      "descricao": "Venha celebrar conosco! ",
+      "hora": "16h00"
     },
     {
-      "dia": "20",
-      "mes": "Jul",
-      "titulo": "Retiro “Respira e Reza”",
-      "descricao": "Uma manhã para desacelerar e reencontrar Deus no meio da rotina.",
-      "hora": "09h00"
-    },
-    {
-      "dia": "02",
-      "mes": "Ago",
-      "titulo": "Missa e confissões",
-      "descricao": "Celebração da Santa Missa com atendimento de confissões antes e depois.",
+      "dia": "14",
+      "mes": "Nov",
+      "titulo": "Missa Com. Santa Tecla",
+      "descricao": "Venha celebrar conosco! ",
       "hora": "18h00"
+    },
+    {
+      "dia": "15",
+      "mes": "Nov",
+      "titulo": "Missa Com. São Lucas",
+      "descricao": "Venha celebrar conosco! ",
+      "hora": "08h00"
     }
   ]
 }
