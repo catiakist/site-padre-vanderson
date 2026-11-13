@@ -1,0 +1,648 @@
+/* =========================================================
+   Padre Vanderson — identidade "A luz do vitral"
+   Paleta e tipografia definidas no briefing.
+   ========================================================= */
+
+:root{
+  /* cor */
+  --brown-900:#241C16;   /* marrom profundo  */
+  --brown-800:#2C2118;
+  --brown-700:#3A2C1F;
+  --ivory:#F4E9D5;       /* marfim           */
+  --ivory-2:#EFE2C9;     /* marfim sombra    */
+  --white-warm:#FFFDF8;  /* branco quente    */
+  --gold:#B98A32;        /* dourado envelhecido */
+  --gold-hi:#D8B15A;
+  --gold-soft:#E9D8AE;
+  --wine:#5A2024;        /* vinho — cor de ação */
+  --wine-700:#471619;
+  --ink:#2B241C;         /* texto sobre marfim */
+  --ink-soft:#6A5C48;    /* texto suave */
+  --line:rgba(185,138,50,.30); /* hairline dourada */
+
+  /* vitral (usado só no herói) */
+  --glass-amber:#C8892B;
+  --glass-teal:#2E6E63;
+  --glass-cobalt:#274B7A;
+  --glass-wine:#7A2230;
+  --glass-green:#3E6B34;
+
+  /* tipografia */
+  --display:"Cormorant Garamond", Georgia, serif;
+  --body:"Mulish", system-ui, -apple-system, sans-serif;
+
+  --container:1180px;
+  --gutter:clamp(1.25rem, 5vw, 4rem);
+  --radius:14px;
+  --shadow:0 24px 60px -30px rgba(36,28,22,.55);
+  --shadow-soft:0 14px 40px -24px rgba(36,28,22,.45);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-size:clamp(1rem,.96rem + .3vw,1.09rem);
+  line-height:1.7;
+  color:var(--ink);
+  background:var(--ivory);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:.01em}
+p{margin:0}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(4rem,9vw,7.5rem)}
+
+/* bandas de fundo (o ritmo da nave) */
+.band-ivory{background:var(--ivory)}
+.band-ivory-2{background:linear-gradient(180deg,var(--ivory),var(--ivory-2))}
+.band-brown{background:var(--brown-900);color:var(--ivory)}
+.band-brown h2,.band-brown h3{color:var(--white-warm)}
+
+/* eyebrow / rótulo litúrgico */
+.eyebrow{
+  font-family:var(--body);font-weight:700;
+  font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 1.1rem;
+  display:inline-flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+.band-brown .eyebrow{color:var(--gold-hi)}
+
+.section-head{max-width:44ch}
+.section-head--center{margin-inline:auto;text-align:center;max-width:52ch}
+.section-head--center .eyebrow::after{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+.h2{font-size:clamp(2rem,1.4rem + 2.6vw,3.35rem)}
+.lead{font-size:clamp(1.12rem,1.05rem + .5vw,1.4rem);color:var(--ink-soft);margin-top:1rem;line-height:1.6}
+.band-brown .lead{color:var(--gold-soft)}
+
+/* ---------- botões ---------- */
+.btn{
+  --_bg:var(--wine);--_fg:#fff;--_bd:transparent;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--body);font-weight:700;font-size:.94rem;letter-spacing:.02em;
+  padding:.95em 1.7em;border-radius:999px;border:1.5px solid var(--_bd);white-space:nowrap;
+  background:var(--_bg);color:var(--_fg);cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  box-shadow:0 12px 26px -14px rgba(90,32,36,.8);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 32px -14px rgba(90,32,36,.9)}
+.btn:active{transform:translateY(0)}
+.btn .arrow{transition:transform .25s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+.btn--wine{--_bg:var(--wine);--_fg:#fff}
+.btn--wine:hover{background:var(--wine-700)}
+.btn--gold{--_bg:var(--gold);--_fg:#241C16}
+.btn--gold:hover{background:var(--gold-hi)}
+.btn--ghost{--_bg:transparent;--_fg:var(--ivory);--_bd:rgba(233,216,174,.55);box-shadow:none}
+.btn--ghost:hover{background:rgba(233,216,174,.12);color:#fff}
+.btn--ghost-dark{--_bg:transparent;--_fg:var(--wine);--_bd:rgba(90,32,36,.4);box-shadow:none}
+.btn--ghost-dark:hover{background:rgba(90,32,36,.07)}
+
+.textlink{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--wine);font-size:.95rem}
+.band-brown .textlink{color:var(--gold-hi)}
+.textlink .arrow{transition:transform .25s ease}
+.textlink:hover .arrow{transform:translateX(4px)}
+
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
+.site-header{position:sticky;top:0;z-index:60;
+  background:rgba(244,233,213,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  transition:background .3s ease,box-shadow .3s ease}
+.site-header.is-scrolled{background:rgba(244,233,213,.96);box-shadow:0 10px 30px -22px rgba(36,28,22,.6)}
+.nav{display:flex;align-items:center;gap:1rem;
+  height:74px;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.25rem,3vw,2.5rem)}
+.brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}
+.brand__mark{width:38px;height:38px;flex:none;color:var(--gold)}
+.brand__crest{height:58px;width:auto;flex:none;display:block;
+  filter:drop-shadow(0 3px 6px rgba(36,28,22,.28))}
+.brand__name{font-family:var(--display);font-weight:600;font-size:1.28rem;line-height:1.08;
+  color:var(--ink);white-space:nowrap}
+.brand__name small{display:block;font-family:var(--body);font-weight:600;
+  font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:.34rem;white-space:nowrap}
+
+.nav-menu{display:flex;align-items:center;gap:.1rem;list-style:none;margin:0;padding:0}
+.nav-menu > li{position:relative}
+.nav-link{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap;
+  padding:.55rem .62rem;font-weight:600;font-size:.92rem;color:var(--ink);border-radius:8px;
+  transition:color .2s ease,background .2s ease}
+.nav-link:hover{color:var(--wine);background:rgba(185,138,50,.1)}
+.nav-link .chev{width:9px;height:9px;opacity:.6}
+.has-drop > .drop{
+  position:absolute;top:calc(100% + 8px);left:0;min-width:214px;
+  background:var(--white-warm);border:1px solid var(--line);border-radius:12px;
+  padding:.5rem;box-shadow:var(--shadow-soft);
+  opacity:0;visibility:hidden;transform:translateY(6px);transition:.22s ease;list-style:none;margin:0}
+.has-drop:hover > .drop,.has-drop:focus-within > .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop a{display:block;padding:.55rem .8rem;border-radius:8px;font-size:.9rem;font-weight:600;color:var(--ink)}
+.drop a:hover{background:rgba(185,138,50,.12);color:var(--wine)}
+.nav-cta{margin-left:.4rem}
+.nav-cta .btn{padding:.7em 1.25em;font-size:.86rem}
+
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;color:var(--ink)}
+.nav-toggle svg{width:26px;height:26px}
+
+/* ============================================================
+   HERÓI — a assinatura: luz de vitral
+   ============================================================ */
+.hero{position:relative;min-height:clamp(560px,88vh,860px);display:flex;align-items:center;
+  overflow:hidden;background:var(--brown-900)}
+.hero__media{position:absolute;inset:0}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.hero__scrim{position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(20,14,10,.92) 0%,rgba(20,14,10,.72) 42%,rgba(20,14,10,.2) 78%,rgba(20,14,10,.45) 100%),
+    linear-gradient(180deg,rgba(20,14,10,.55),rgba(20,14,10,0) 30%,rgba(20,14,10,.7))}
+/* luz colorida atravessando o vitral (drift lento) */
+.hero__vitral{position:absolute;inset:0;mix-blend-mode:screen;opacity:.55;pointer-events:none;
+  background:
+    radial-gradient(40% 55% at 12% 22%,rgba(200,137,43,.55),transparent 60%),
+    radial-gradient(38% 50% at 30% 78%,rgba(46,110,99,.5),transparent 62%),
+    radial-gradient(34% 46% at 8% 62%,rgba(39,75,122,.45),transparent 60%),
+    radial-gradient(30% 44% at 22% 10%,rgba(122,34,48,.4),transparent 60%);
+  animation:vitral 22s ease-in-out infinite alternate}
+@keyframes vitral{
+  0%{transform:translate3d(0,0,0) scale(1);opacity:.5}
+  50%{transform:translate3d(2%,-1.5%,0) scale(1.06);opacity:.62}
+  100%{transform:translate3d(-1.5%,2%,0) scale(1.03);opacity:.48}
+}
+.hero__caming{position:absolute;top:0;bottom:0;left:calc(var(--gutter) + 0px);width:1px;
+  background:linear-gradient(180deg,transparent,var(--gold) 22%,var(--gold) 78%,transparent);opacity:.5}
+.hero__inner{position:relative;z-index:2;max-width:640px;
+  padding-block:clamp(3rem,8vh,6rem)}
+.hero .eyebrow{color:var(--gold-hi)}
+.hero__title{color:var(--white-warm);
+  font-size:clamp(2.9rem,2rem + 5.2vw,5.6rem);font-weight:600;line-height:1.0;letter-spacing:0}
+.hero__title em{font-style:italic;color:var(--gold-hi)}
+.hero__sub{margin-top:1.4rem;font-size:clamp(1.1rem,1rem + .6vw,1.4rem);
+  color:rgba(244,233,213,.86);max-width:46ch;line-height:1.55}
+.hero__actions{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1rem}
+.hero__foot{position:absolute;left:var(--gutter);bottom:1.6rem;z-index:2;
+  display:flex;align-items:center;gap:.7rem;color:rgba(244,233,213,.6);
+  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase}
+.hero__foot svg{width:16px;height:16px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ============================================================
+   ACOLHIDA
+   ============================================================ */
+.welcome{text-align:center}
+.welcome__mark{height:70px;width:auto;display:block;margin:0 auto 1.6rem}
+.welcome__quote{font-family:var(--display);font-weight:500;font-style:italic;
+  font-size:clamp(1.55rem,1.15rem + 1.9vw,2.7rem);line-height:1.28;color:var(--ink);
+  max-width:24ch;margin-inline:auto}
+.welcome__sign{margin-top:1.7rem;font-family:var(--body);font-weight:700;letter-spacing:.02em;color:var(--wine)}
+.welcome__sign span{display:block;font-weight:600;font-size:.76rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:.25rem}
+
+/* faixa de vitral (divisor) */
+.glass-ribbon{height:8px;display:flex;gap:2px;overflow:hidden}
+.glass-ribbon i{flex:1}
+.glass-ribbon i:nth-child(5n+1){background:var(--glass-amber)}
+.glass-ribbon i:nth-child(5n+2){background:var(--glass-wine)}
+.glass-ribbon i:nth-child(5n+3){background:var(--glass-cobalt)}
+.glass-ribbon i:nth-child(5n+4){background:var(--glass-teal)}
+.glass-ribbon i:nth-child(5n+5){background:var(--glass-green)}
+
+/* ---------- lema sacerdotal ---------- */
+.lema{position:relative;overflow:hidden;background:var(--brown-900);color:var(--ivory);
+  padding-block:clamp(3.5rem,7vw,5.5rem);text-align:center;isolation:isolate}
+.lema__glow{position:absolute;inset:0;z-index:-1;opacity:.35;mix-blend-mode:screen;pointer-events:none;
+  background:
+    radial-gradient(45% 60% at 50% -5%,rgba(200,137,43,.55),transparent 60%),
+    radial-gradient(38% 50% at 14% 110%,rgba(122,34,48,.45),transparent 60%),
+    radial-gradient(38% 50% at 86% 110%,rgba(39,75,122,.4),transparent 60%)}
+.lema__mark{height:76px;width:auto;display:block;margin:0 auto 1.5rem}
+.lema__text{font-family:var(--display);font-style:italic;font-weight:500;
+  font-size:clamp(1.85rem,1.2rem + 2.7vw,3.3rem);line-height:1.24;color:var(--white-warm);
+  max-width:22ch;margin-inline:auto}
+.lema__cite{margin-top:1.5rem;font-family:var(--body);font-weight:700;font-size:.74rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi)}
+
+/* ============================================================
+   ACESSOS RÁPIDOS
+   ============================================================ */
+.quick__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.6rem}
+.qcard{position:relative;display:flex;flex-direction:column;gap:1.1rem;
+  background:var(--white-warm);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.7rem 1.5rem 1.5rem;overflow:hidden;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.qcard::after{content:"";position:absolute;left:0;top:0;height:100%;width:3px;
+  background:var(--wine);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.qcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:transparent}
+.qcard:hover::after{transform:scaleY(1)}
+.qcard__icon{width:40px;height:40px;color:var(--wine)}
+.qcard__title{font-family:var(--display);font-size:1.5rem;font-weight:600;color:var(--ink)}
+.qcard__text{font-size:.94rem;color:var(--ink-soft);line-height:1.5;flex:1}
+.qcard__go{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.85rem;
+  letter-spacing:.04em;color:var(--wine)}
+.qcard__go .arrow{transition:transform .25s ease}
+.qcard:hover .qcard__go .arrow{transform:translateX(4px)}
+
+/* ============================================================
+   CONHEÇA O PADRE
+   ============================================================ */
+.about__grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+@media (min-width:961px){.about__media{position:sticky;top:100px}}
+.about__media{position:relative}
+.about__media img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;
+  aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
+.about__media .badge{position:absolute;right:-16px;bottom:-16px;width:100px;height:100px;
+  background:var(--white-warm);border-radius:50%;display:grid;place-items:center;
+  box-shadow:var(--shadow-soft);border:1px solid var(--line)}
+.about__media .badge img{height:72px;width:auto}
+.about__body p{margin-top:1.15rem;color:var(--ink-soft);max-width:52ch}
+.about__body p:first-of-type{margin-top:1.6rem}
+.about__body .btn{margin-top:2rem}
+.about__body .lead{color:var(--ink)}
+
+/* ============================================================
+   MENSAGEM EM DESTAQUE (banda escura)
+   ============================================================ */
+.featured__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:2.4rem}
+.video-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;
+  box-shadow:var(--shadow);border:1px solid rgba(185,138,50,.25)}
+.video-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.video-card:hover img{transform:scale(1.05)}
+.video-card__scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,14,10,.75))}
+.video-card__play{position:absolute;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;
+  background:rgba(90,32,36,.92);display:grid;place-items:center;color:#fff;
+  border:2px solid rgba(233,216,174,.6);transition:transform .25s ease,background .25s ease}
+.video-card:hover .video-card__play{transform:scale(1.08);background:var(--wine)}
+.video-card__play svg{width:26px;height:26px;margin-left:3px}
+.video-card__tag{position:absolute;left:1rem;top:1rem;background:rgba(20,14,10,.7);
+  color:var(--gold-hi);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:.4rem .7rem;border-radius:999px;border:1px solid rgba(185,138,50,.4)}
+.featured__body .kicker{color:var(--gold-hi);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.featured__body h3{font-size:clamp(1.7rem,1.3rem + 1.6vw,2.5rem);margin-top:.8rem;color:var(--white-warm)}
+.featured__body p{margin-top:1.1rem;color:var(--gold-soft)}
+.featured__body .textlink{margin-top:1.6rem}
+
+/* ============================================================
+   FORMAÇÃO
+   ============================================================ */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.6rem}
+.article-card{display:flex;flex-direction:column;background:var(--white-warm);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:transform .28s ease,box-shadow .28s ease}
+.article-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft)}
+.article-card__img{aspect-ratio:16/10;overflow:hidden}
+.article-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.article-card:hover .article-card__img img{transform:scale(1.06)}
+.article-card__body{padding:1.5rem 1.5rem 1.7rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.article-card__tag{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.article-card h3{font-size:1.4rem;color:var(--ink);line-height:1.2}
+.article-card p{font-size:.94rem;color:var(--ink-soft);flex:1}
+.article-card .textlink{margin-top:.3rem}
+
+/* ============================================================
+   PEDIDO DE ORAÇÃO — o pico emocional
+   ============================================================ */
+.prayer{position:relative;overflow:hidden;background:var(--brown-900);color:var(--ivory);isolation:isolate}
+.prayer__vitral{position:absolute;inset:0;z-index:-1;opacity:.4;mix-blend-mode:screen;pointer-events:none;
+  background:
+    radial-gradient(50% 60% at 85% 20%,rgba(200,137,43,.5),transparent 60%),
+    radial-gradient(45% 55% at 92% 85%,rgba(122,34,48,.5),transparent 62%),
+    radial-gradient(40% 50% at 78% 55%,rgba(39,75,122,.4),transparent 60%)}
+.prayer__inner{max-width:720px;text-align:center;margin-inline:auto;position:relative}
+.prayer__mark{height:74px;width:auto;display:block;margin:0 auto 1.6rem}
+.prayer h2{font-size:clamp(2.2rem,1.6rem + 3vw,4rem);color:var(--white-warm)}
+.prayer h2 em{font-style:italic;color:var(--gold-hi)}
+.prayer p{margin-top:1.3rem;font-size:clamp(1.1rem,1rem + .6vw,1.35rem);color:var(--gold-soft);
+  max-width:52ch;margin-inline:auto;line-height:1.6}
+.prayer__actions{margin-top:2.3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.prayer__note{margin-top:1.5rem;font-size:.85rem;color:rgba(233,216,174,.6);letter-spacing:.02em}
+
+/* ============================================================
+   AGENDA
+   ============================================================ */
+.agenda__list{margin-top:2.4rem;display:grid;gap:1rem}
+.event{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;
+  background:var(--white-warm);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.35rem 1.6rem;transition:border-color .25s ease,transform .25s ease}
+.event:hover{transform:translateX(4px);border-color:rgba(90,32,36,.35)}
+.event__date{flex:none;width:76px;text-align:center;background:var(--wine);color:#fff;border-radius:10px;
+  padding:.7rem .4rem;line-height:1}
+.event__date b{display:block;font-family:var(--display);font-size:1.9rem;font-weight:600}
+.event__date span{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.event__info h3{font-size:1.35rem;color:var(--ink)}
+.event__info p{font-size:.9rem;color:var(--ink-soft);margin-top:.25rem}
+.event__meta{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--wine);font-weight:700}
+.event__meta svg{width:16px;height:16px}
+
+/* ============================================================
+   ORAÇÕES — como um missal
+   ============================================================ */
+.prayers__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);
+  margin-top:2.4rem;align-items:start}
+.prayer-feature{background:var(--white-warm);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.8rem,4vw,3rem);position:relative;overflow:hidden}
+.prayer-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--glass-amber),var(--glass-wine),var(--glass-cobalt),var(--glass-teal),var(--glass-green))}
+.prayer-feature .tag{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.prayer-feature h3{font-size:1.7rem;margin:.6rem 0 1.2rem;color:var(--ink)}
+.prayer-feature__text{font-family:var(--display);font-size:clamp(1.3rem,1.1rem + 1vw,1.75rem);
+  font-style:italic;line-height:1.5;color:var(--ink)}
+.prayer-feature__text span{color:var(--wine);font-style:normal;font-family:var(--body);
+  font-size:.8rem;font-weight:700;letter-spacing:.05em;display:block;margin-top:1.2rem}
+.prayer-list{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.prayer-list a{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:var(--white-warm);border:1px solid var(--line);border-radius:10px;
+  padding:1.1rem 1.35rem;font-weight:600;color:var(--ink);transition:.25s ease}
+.prayer-list a:hover{border-color:var(--wine);color:var(--wine);transform:translateX(4px)}
+.prayer-list .n{font-family:var(--display);font-size:1.1rem;color:var(--gold);margin-right:.2rem}
+.prayer-list svg{width:18px;height:18px;color:var(--gold)}
+
+/* ============================================================
+   GALERIA
+   ============================================================ */
+/* capas de álbum (home) */
+.gallery__albums{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.8rem}
+.album{position:relative;display:block;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:4/3;box-shadow:var(--shadow-soft);isolation:isolate;background:var(--brown-800)}
+.album img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.album:hover img{transform:scale(1.06)}
+.album__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,0) 30%,rgba(20,14,10,.85))}
+.album__cap{position:absolute;left:1.25rem;right:1.25rem;bottom:1.1rem;z-index:2;color:var(--white-warm)}
+.album__cap b{display:block;font-family:var(--display);font-weight:600;font-size:1.55rem;line-height:1.08}
+.album__cap em{font-style:normal;font-weight:700;font-size:.78rem;letter-spacing:.06em;
+  color:var(--gold-hi);display:inline-block;margin-top:.4rem}
+.album:hover .album__cap em{color:var(--gold-soft)}
+.gallery__more{text-align:center;margin-top:2.4rem}
+
+.gallery__filters{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin-top:2.4rem}
+.gallery__filter{font-family:var(--body);font-weight:700;font-size:.85rem;letter-spacing:.01em;
+  padding:.55em 1.15em;border-radius:999px;border:1.5px solid var(--line);background:transparent;
+  color:var(--ink);cursor:pointer;transition:border-color .2s ease,background .2s ease,color .2s ease}
+.gallery__filter:hover{border-color:var(--wine);color:var(--wine)}
+.gallery__filter.active{background:var(--wine);border-color:var(--wine);color:#fff}
+.gallery__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:.7rem;margin-top:2rem}
+.gallery__item{position:relative;overflow:hidden;border-radius:10px;cursor:pointer;
+  background:var(--brown-800);aspect-ratio:1;padding:0;border:0}
+.gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.gallery__item:hover img{transform:scale(1.07)}
+.gallery__item::after{content:"";position:absolute;inset:0;background:rgba(36,28,22,0);transition:background .3s ease}
+.gallery__item:hover::after{background:rgba(36,28,22,.22)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(20,14,10,.94);
+  display:flex;align-items:center;justify-content:center;padding:2rem;
+  opacity:0;visibility:hidden;transition:.3s ease}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:min(92vw,1100px);max-height:88vh;border-radius:10px;box-shadow:var(--shadow)}
+.lightbox__close{position:absolute;top:1.4rem;right:1.6rem;background:none;border:0;color:var(--ivory);cursor:pointer;z-index:2}
+.lightbox__close svg{width:34px;height:34px}
+.lightbox__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+  background:rgba(233,216,174,.12);border:1px solid rgba(233,216,174,.35);color:var(--ivory);
+  transition:background .2s ease,border-color .2s ease}
+.lightbox__nav:hover{background:var(--wine);border-color:var(--wine)}
+.lightbox__nav svg{width:24px;height:24px}
+.lightbox__prev{left:1.4rem}
+.lightbox__next{right:1.4rem}
+.lightbox__cap{position:absolute;bottom:1.3rem;left:0;right:0;text-align:center;
+  color:rgba(233,216,174,.8);font-size:.85rem;letter-spacing:.02em}
+.lightbox__cap b{color:var(--gold-hi);font-weight:700}
+@media (max-width:560px){
+  .lightbox__nav{width:44px;height:44px}
+  .lightbox__prev{left:.5rem}.lightbox__next{right:.5rem}
+}
+
+/* ============================================================
+   RECEBA AS MENSAGENS
+   ============================================================ */
+.subscribe__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.subscribe form{margin-top:1.8rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.subscribe input{flex:1;min-width:220px;background:rgba(255,253,248,.08);border:1.5px solid rgba(233,216,174,.35);
+  border-radius:999px;padding:.9em 1.4em;color:var(--ivory);font-family:var(--body);font-size:.95rem}
+.subscribe input::placeholder{color:rgba(233,216,174,.55)}
+.subscribe input:focus{outline:none;border-color:var(--gold-hi)}
+.subscribe__note{margin-top:1rem;font-size:.8rem;color:rgba(233,216,174,.55)}
+.whatsapp-card{background:linear-gradient(160deg,var(--brown-800),var(--brown-700));
+  border:1px solid rgba(185,138,50,.3);border-radius:var(--radius);padding:clamp(1.8rem,4vw,2.6rem);text-align:center}
+.whatsapp-card--center{max-width:460px;margin:2.6rem auto 0}
+.whatsapp-card svg.wa{width:54px;height:54px;color:var(--gold-hi);margin-bottom:1rem}
+.whatsapp-card h3{color:var(--white-warm);font-size:1.6rem}
+.whatsapp-card p{color:var(--gold-soft);margin-top:.7rem;font-size:.95rem}
+.whatsapp-card .btn{margin-top:1.5rem}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+.site-footer{background:#1C1610;color:rgba(244,233,213,.75);padding-block:clamp(3.5rem,6vw,5rem) 2rem}
+.footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}
+.footer__brand .brand__name{color:var(--white-warm)}
+.footer__brand p{margin-top:1.1rem;font-size:.92rem;max-width:34ch;line-height:1.6}
+.footer__social{display:flex;gap:.7rem;margin-top:1.4rem}
+.footer__social a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(185,138,50,.35);color:var(--gold-hi);transition:.25s ease}
+.footer__social a:hover{background:var(--wine);border-color:var(--wine);color:#fff}
+.footer__social svg{width:19px;height:19px}
+.footer__col h4{font-family:var(--body);font-size:.76rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 1.1rem}
+.footer__col ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.footer__col a{font-size:.92rem;color:rgba(244,233,213,.72)}
+.footer__col a:hover{color:var(--gold-hi)}
+.footer__bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(185,138,50,.2);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:rgba(244,233,213,.5)}
+.footer__bottom a{color:rgba(244,233,213,.6)}
+.footer__bottom a:hover{color:var(--gold-hi)}
+
+/* ============================================================
+   PÁGINA: PEDIDO DE ORAÇÃO
+   ============================================================ */
+.page-hero{position:relative;overflow:hidden;background:var(--brown-900);color:var(--ivory);
+  text-align:center;padding-block:clamp(3.5rem,8vw,6rem);isolation:isolate}
+.page-hero__glow{position:absolute;inset:0;z-index:-1;opacity:.4;mix-blend-mode:screen;pointer-events:none;
+  background:
+    radial-gradient(45% 60% at 50% -5%,rgba(200,137,43,.5),transparent 60%),
+    radial-gradient(40% 55% at 12% 110%,rgba(122,34,48,.45),transparent 60%),
+    radial-gradient(40% 55% at 88% 110%,rgba(39,75,122,.4),transparent 60%)}
+.page-hero__mark{height:70px;width:auto;display:block;margin:0 auto 1.4rem}
+.page-hero h1{font-size:clamp(2.4rem,1.7rem + 3vw,4rem);color:var(--white-warm)}
+.page-hero p{margin-top:1.1rem;font-size:clamp(1.1rem,1rem + .5vw,1.35rem);color:var(--gold-soft);
+  max-width:48ch;margin-inline:auto;line-height:1.6}
+.page-hero .crumb{margin-bottom:1.6rem;font-size:.76rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-hi)}
+.page-hero .crumb a{color:rgba(233,216,174,.7)}
+.page-hero .crumb a:hover{color:var(--gold-hi)}
+
+.pedido__grid{display:grid;grid-template-columns:0.82fr 1.18fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.pedido-aside .eyebrow{margin-bottom:1.1rem}
+.pedido-aside h2{font-size:clamp(1.7rem,1.3rem + 1.6vw,2.4rem);color:var(--ink)}
+.pedido-aside > p{margin-top:1.1rem;color:var(--ink-soft);max-width:44ch}
+.assur{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem}
+.assur li{display:flex;gap:.9rem;align-items:flex-start}
+.assur svg{width:26px;height:26px;flex:none;color:var(--wine);margin-top:.15rem}
+.assur b{display:block;color:var(--ink);font-size:.98rem}
+.assur span{font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+
+/* formulário */
+.form-card{background:var(--white-warm);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.6rem,4vw,2.6rem);box-shadow:var(--shadow-soft)}
+.field{margin-bottom:1.3rem}
+.field > label{display:block;font-weight:700;font-size:.86rem;color:var(--ink);margin-bottom:.5rem}
+.field .opt{color:var(--ink-soft);font-weight:600;font-size:.78rem;text-transform:none;letter-spacing:0}
+.field input,.field textarea{width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);
+  background:var(--ivory);border:1.5px solid var(--line);border-radius:10px;padding:.85em 1em;
+  transition:border-color .2s ease,box-shadow .2s ease}
+.field textarea{min-height:132px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--wine);
+  box-shadow:0 0 0 3px rgba(90,32,36,.13)}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-soft);opacity:.65}
+.choice{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.choice label{display:flex;align-items:center;gap:.6rem;border:1.5px solid var(--line);border-radius:10px;
+  padding:.72em .9em;font-size:.92rem;font-weight:600;color:var(--ink);cursor:pointer;
+  transition:border-color .2s ease,background .2s ease,color .2s ease}
+.choice input{accent-color:var(--wine);width:auto;flex:none}
+.choice label:hover{border-color:var(--wine)}
+.choice label:has(input:checked){border-color:var(--wine);background:rgba(90,32,36,.06);color:var(--wine)}
+.form-check{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.9rem;font-size:.92rem;
+  color:var(--ink-soft);line-height:1.5}
+.form-check input{margin-top:.15rem;accent-color:var(--wine);width:auto;flex:none}
+.form-check label{cursor:pointer}
+.form-actions{margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.form-note{margin-top:1.2rem;font-size:.8rem;color:var(--ink-soft)}
+.form-note svg{width:14px;height:14px;vertical-align:-2px;margin-right:.3rem;color:var(--wine)}
+.form-error{margin-top:1.2rem;background:rgba(90,32,36,.08);border:1px solid rgba(90,32,36,.32);
+  color:var(--wine);border-radius:10px;padding:.85em 1.1em;font-size:.92rem;font-weight:600}
+.btn.is-loading,.btn:disabled{opacity:.65;pointer-events:none;cursor:default}
+
+.success-panel{background:var(--white-warm);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(2rem,5vw,3.4rem);text-align:center;box-shadow:var(--shadow-soft)}
+.success-panel__mark{height:74px;width:auto;display:block;margin:0 auto 1.4rem}
+.success-panel h2{font-size:clamp(1.8rem,1.4rem + 1.8vw,2.6rem);color:var(--ink)}
+.success-panel p{margin-top:1rem;color:var(--ink-soft);max-width:44ch;margin-inline:auto}
+.success-panel__reopen{font-size:.9rem}
+.success-panel__reopen a{color:var(--wine);font-weight:700;text-decoration:underline}
+.success-panel .form-actions{justify-content:center}
+
+@media (max-width:860px){
+  .pedido__grid{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .choice{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   REVELAÇÃO AO ROLAR
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width:960px){
+  .quick__grid{grid-template-columns:repeat(2,1fr)}
+  .about__grid,.featured__grid,.prayers__grid,.subscribe__grid{grid-template-columns:1fr}
+  .about__media{max-width:440px;margin-inline:auto}
+  .cards{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+  .featured__body{order:-1}
+  .footer__top{grid-template-columns:1fr 1fr}
+  .gallery__albums{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:1160px){
+  .nav-menu,.nav-cta{display:none}
+  .nav-toggle{display:inline-flex}
+  /* menu móvel */
+  .mobile-menu{position:fixed;inset:0;z-index:80;background:var(--brown-900);color:var(--ivory);
+    padding:5.5rem var(--gutter) 2rem;overflow-y:auto;
+    transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);visibility:hidden}
+  .mobile-menu.open{transform:translateX(0);visibility:visible}
+  .mobile-menu__close{position:absolute;top:1.4rem;right:var(--gutter);background:none;border:0;color:var(--ivory);cursor:pointer}
+  .mobile-menu__close svg{width:30px;height:30px}
+  .mobile-menu ul{list-style:none;margin:0;padding:0}
+  .mobile-menu > ul > li{border-bottom:1px solid rgba(185,138,50,.2)}
+  .mobile-menu > ul > li > a{display:block;padding:1.05rem 0;font-family:var(--display);
+    font-size:1.6rem;font-weight:600;color:var(--white-warm)}
+  .mobile-menu .sub{padding:0 0 1rem}
+  .mobile-menu .sub a{display:block;padding:.4rem 0;color:var(--gold-soft);font-size:1rem}
+  .mobile-menu .btn{margin-top:1.8rem;width:100%;justify-content:center}
+}
+@media (min-width:1161px){.mobile-menu{display:none}}
+@media (max-width:560px){
+  .quick__grid{grid-template-columns:1fr}
+  .gallery__albums{grid-template-columns:1fr}
+  .gallery__grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .event{grid-template-columns:auto 1fr;gap:1rem}
+  .event__meta{display:none}
+  .hero__actions{flex-direction:column;align-items:flex-start}
+  .hero__actions .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__vitral{animation:none}
+  .hero__foot svg{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{scroll-behavior:auto !important}
+}
+
+/* ============================================================
+   POLIMENTO MOBILE / EXPERIÊNCIA DE TOQUE
+   ============================================================ */
+/* âncoras não ficam escondidas sob o cabeçalho fixo */
+[id]{scroll-margin-top:88px}
+/* feedback de toque discreto (sem o flash azul padrão) */
+a,button,.gallery__item,.album,.qcard,.event,.article-card{-webkit-tap-highlight-color:rgba(90,32,36,.14)}
+/* altura de viewport dinâmica no herói (evita "pulo" com a barra do navegador) */
+.hero{min-height:clamp(560px,86dvh,860px)}
+/* alvos de toque maiores no rodapé e nos links de texto */
+.footer__col a{display:inline-block;padding:.32rem 0}
+.footer__col ul{gap:.2rem}
+.textlink{padding-block:.15rem}
+
+@media (max-width:760px){
+  /* cabeçalho mais enxuto no celular */
+  .nav{height:64px}
+  .brand__crest{height:46px}
+  .brand__name{font-size:1.16rem}
+  .brand__name small{font-size:.55rem}
+  [id]{scroll-margin-top:74px}
+  /* botões de menu com área de toque de 44px+ */
+  .nav-toggle{padding:.5rem;margin-right:-.4rem}
+  .mobile-menu__close{padding:.5rem;top:1rem}
+  .mobile-menu .sub a{padding:.55rem 0}
+  .mobile-menu > ul > li > a{padding:.95rem 0}
+}
+@media (max-width:560px){
+  /* links do rodapé confortáveis para o dedo */
+  .footer__col a{padding:.55rem 0;font-size:1rem}
+  .footer__col h4{margin-bottom:.5rem}
+  .footer__bottom{gap:.6rem;flex-direction:column;align-items:flex-start}
+  .footer__bottom a{display:inline-block;padding:.35rem 0}
+  .textlink{padding-block:.4rem}
+  .qcard__go{padding-block:.3rem}
+  /* botão de enviar ocupa a largura toda (CTA mais forte no celular) */
+  .form-actions{flex-direction:column;align-items:stretch}
+  .form-actions .btn{width:100%;justify-content:center}
+  .form-actions .textlink{align-self:center}
+  /* filtros da galeria com toque confortável */
+  .gallery__filter{padding:.72em 1.05em}
+  /* X do lightbox maior e mais afastado da borda */
+  .lightbox__close{padding:.4rem;top:1rem;right:1rem}
+  /* respiro vertical um pouco menor entre seções */
+  .section{padding-block:clamp(3rem,11vw,4rem)}
+}
+
+/* ===== Artigos (leitor) ===== */
+.container--narrow{max-width:720px;}
+.artigo__title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:.2em 0 .6em;}
+.artigo__cover{margin:1rem 0 1.5rem;border-radius:14px;overflow:hidden;}
+.artigo__cover img{width:100%;height:auto;display:block;}
+.artigo__body{font-size:1.12rem;line-height:1.85;}
+.artigo__body h2,.artigo__body h3{font-family:"Cormorant Garamond",Georgia,serif;margin:1.6em 0 .4em;line-height:1.2;}
+.artigo__body h2{font-size:1.7rem;} .artigo__body h3{font-size:1.4rem;}
+.artigo__body p{margin:0 0 1.1em;}
+.artigo__body ul{margin:0 0 1.1em 1.2em;} .artigo__body li{margin:.3em 0;}
+.artigo__body blockquote{margin:1.4em 0;padding:.6em 1.2em;border-left:3px solid var(--ouro,#b3924c);font-style:italic;color:#5b5750;}
+.artigo__back{margin-top:2.5rem;}

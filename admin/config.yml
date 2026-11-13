@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: pt
+media_folder: "assets/artigos"
+public_folder: "assets/artigos"
+
+collections:
+  # ---------- ARTIGOS ----------
+  - name: "artigos"
+    label: "Artigos"
+    label_singular: "Artigo"
+    description: "Textos de formação e espiritualidade do site."
+    folder: "content/artigos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}  —  {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Categoria", name: "tag", widget: "select", options: ["Oração", "Vida cristã", "Espírito Santo", "Catequese", "Evangelho", "Família", "Igreja"], default: "Oração" }
+      - { label: "Imagem de capa", name: "image", widget: "image", required: false }
+      - { label: "Resumo (1 a 2 linhas)", name: "excerpt", widget: "text", required: false }
+      - { label: "Texto do artigo", name: "body", widget: "markdown" }
+
+  # ---------- CONTEÚDO DAS SEÇÕES ----------
+  - name: "conteudo"
+    label: "Conteúdo do site"
+    description: "Textos, agenda, orações e links das seções da página inicial."
+    editor: { preview: false }
+    files:
+      - name: "capa"
+        label: "Capa e lema"
+        file: "content/config/capa.json"
+        fields:
+          - { label: "Tarja acima do título", name: "hero_eyebrow", widget: "string" }
+          - { label: "Título da capa", name: "hero_title", widget: "string", hint: "Pode usar <br> para quebrar linha e <em>palavra</em> para itálico." }
+          - { label: "Frase abaixo do título", name: "hero_sub", widget: "text" }
+          - { label: "Lema", name: "lema_text", widget: "string" }
+          - { label: "Autor do lema", name: "lema_cite", widget: "string" }
+      - name: "sobre"
+        label: "Quem é o Padre"
+        file: "content/config/sobre.json"
+        fields:
+          - { label: "Tarja (ex.: Quem é)", name: "eyebrow", widget: "string" }
+          - { label: "Texto de apresentação", name: "corpo", widget: "markdown" }
+      - name: "palavra"
+        label: "A Palavra de hoje"
+        file: "content/config/palavra.json"
+        fields:
+          - { label: "Tarja", name: "eyebrow", widget: "string" }
+          - { label: "Título da seção", name: "titulo", widget: "string" }
+          - { label: "Etiqueta do episódio", name: "kicker", widget: "string" }
+          - { label: "Título da mensagem", name: "h3", widget: "string" }
+          - { label: "Descrição", name: "texto", widget: "text" }
+      - name: "agenda"
+        label: "Agenda (próximos encontros)"
+        file: "content/config/agenda.json"
+        fields:
+          - label: "Encontros"
+            name: "encontros"
+            widget: "list"
+            summary: "{{fields.dia}}/{{fields.mes}} — {{fields.titulo}}"
+            fields:
+              - { label: "Dia", name: "dia", widget: "string" }
+              - { label: "Mês (abrev.)", name: "mes", widget: "string", hint: "Ex.: Jul, Ago, Set" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
+              - { label: "Horário", name: "hora", widget: "string", hint: "Ex.: 19h30" }
+      - name: "oracoes"
+        label: "Orações (Reze comigo)"
+        file: "content/config/oracoes.json"
+        fields:
+          - { label: "Tarja", name: "eyebrow", widget: "string" }
+          - { label: "Título da seção", name: "titulo", widget: "string" }
+          - { label: "Etiqueta da oração em destaque", name: "destaque_tag", widget: "string" }
+          - { label: "Título da oração em destaque", name: "destaque_titulo", widget: "string" }
+          - { label: "Texto da oração em destaque", name: "destaque_texto", widget: "text" }
+          - label: "Lista de orações"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.num}} {{fields.titulo}}"
+            fields:
+              - { label: "Numeral (ex.: I.)", name: "num", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Link (opcional)", name: "link", widget: "string", required: false, default: "#" }
+      - name: "whatsapp"
+        label: "Faixa do WhatsApp"
+        file: "content/config/whatsapp.json"
+        fields:
+          - { label: "Tarja", name: "eyebrow", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Frase de apoio", name: "lead", widget: "text" }
+          - { label: "Título do cartão", name: "card_titulo", widget: "string" }
+          - { label: "Texto do cartão", name: "card_texto", widget: "text" }
+      - name: "links"
+        label: "Links e redes"
+        file: "content/config/links.json"
+        fields:
+          - { label: "YouTube", name: "youtube", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - { label: "Canal do WhatsApp", name: "whatsapp_canal", widget: "string" }

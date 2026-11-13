@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Orações",
+  "titulo": "Reze comigo",
+  "destaque_tag": "Oração em destaque",
+  "destaque_titulo": "Ao Espírito Santo",
+  "destaque_texto": "Vinde, Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do vosso amor. Enviai o vosso Espírito e tudo será criado, e renovareis a face da terra.",
+  "lista": [
+    {
+      "num": "I.",
+      "titulo": "Oração da manhã",
+      "link": "#"
+    },
+    {
+      "num": "II.",
+      "titulo": "Ato de confiança",
+      "link": "#"
+    },
+    {
+      "num": "III.",
+      "titulo": "Terço da Misericórdia",
+      "link": "#"
+    },
+    {
+      "num": "IV.",
+      "titulo": "Consagração a Nossa Senhora",
+      "link": "#"
+    },
+    {
+      "num": "V.",
+      "titulo": "Oração da noite",
+      "link": "#"
+    }
+  ]
+}

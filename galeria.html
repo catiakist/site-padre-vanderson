@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria · Padre Vanderson</title>
+<meta name="description" content="Galeria de fotos do Padre Vanderson: ordenação, posse em Venâncio Aires, missas e celebrações, missão no exterior e momentos com a comunidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/img/brasao-escudo.png">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest-line" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 18 H76 V50 C76 71 61 83 50 89 C39 83 24 71 24 50 Z"/>
+      <path d="M50 18 V86"/>
+      <path d="M25 45 H75"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ============================ CABEÇALHO ============================ -->
+<header class="site-header" id="topo">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="index.html" aria-label="Padre Vanderson — início">
+      <img class="brand__crest" src="assets/img/brasao.png" alt="Brasão do Padre Vanderson" width="48" height="58">
+      <span class="brand__name">Padre Vanderson<small>Oração &amp; Formação</small></span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="index.html">Início</a></li>
+      <li><a class="nav-link" href="index.html#conheca">Padre Vanderson</a></li>
+      <li><a class="nav-link" href="index.html#oracoes">Espiritualidade</a></li>
+      <li><a class="nav-link" href="index.html#formacao">Formação</a></li>
+      <li><a class="nav-link" href="index.html#destaque">Conteúdos</a></li>
+      <li><a class="nav-link" href="index.html#agenda">Agenda</a></li>
+      <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn--wine" href="pedido.html">Pedido de oração</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" data-menu-open>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" aria-label="Fechar menu" data-menu-close>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+  </button>
+  <ul>
+    <li><a href="index.html" data-menu-close>Início</a></li>
+    <li><a href="index.html#conheca" data-menu-close>Padre Vanderson</a></li>
+    <li><a href="index.html#oracoes" data-menu-close>Espiritualidade</a></li>
+    <li><a href="index.html#formacao" data-menu-close>Formação</a></li>
+    <li><a href="index.html#destaque" data-menu-close>Conteúdos</a></li>
+    <li><a href="index.html#agenda" data-menu-close>Agenda</a></li>
+    <li><a href="index.html#contato" data-menu-close>Contato</a></li>
+  </ul>
+  <a class="btn btn--wine" href="pedido.html" data-menu-close>Pedido de oração</a>
+</div>
+
+<!-- ============================ TOPO DA PÁGINA ============================ -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <p class="crumb"><a href="index.html">Início</a> · Galeria</p>
+    <img class="page-hero__mark" src="assets/img/brasao.png" alt="" aria-hidden="true">
+    <h1>Momentos de fé</h1>
+    <p>Da ordenação à missão — instantes de uma vida dedicada a Deus e às pessoas.</p>
+  </div>
+</section>
+
+<!-- ============================ GALERIA ============================ -->
+<section class="section band-ivory" id="galeria">
+  <div class="container">
+    <div class="gallery__filters" id="galleryFilters"></div>
+    <div class="gallery__grid" id="gallery"></div>
+    <noscript><p style="text-align:center;color:var(--ink-soft);margin-top:2rem">Ative o JavaScript para ver a galeria de fotos.</p></noscript>
+  </div>
+</section>
+
+<!-- ============================ RODAPÉ ============================ -->
+<footer class="site-footer" id="contato">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Padre Vanderson">
+          <img class="brand__crest" src="assets/img/brasao.png" alt="Brasão do Padre Vanderson" width="48" height="58">
+          <span class="brand__name">Padre Vanderson<small>Oração &amp; Formação</small></span>
+        </a>
+        <p>Um espaço de oração, direção espiritual e formação para caminhar mais perto de Deus.</p>
+        <div class="footer__social">
+          <a href="https://www.youtube.com/channel/UCvTfDBISUCdvA43TUDEplZA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.5 31 31 0 0 0-.4-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          <a href="https://www.instagram.com/padrevanderson" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://whatsapp.com/channel/0029VaDxDVgDzgTH6yd3kF20" target="_blank" rel="noopener" aria-label="Canal no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm0 16.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4.1-5.5c-.2-.1-1.3-.7-1.6-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.6-1.2v-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5 0-.7.3-.9.9-1.1 2.1-.4 3.4a8 8 0 0 0 4.6 4c.4.1.8.1 1.1 0 .6-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="index.html#conheca">Padre Vanderson</a></li>
+          <li><a href="index.html#oracoes">Espiritualidade</a></li>
+          <li><a href="index.html#formacao">Formação</a></li>
+          <li><a href="index.html#destaque">Conteúdos</a></li>
+          <li><a href="index.html#agenda">Agenda</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Reze</h4>
+        <ul>
+          <li><a href="pedido.html">Pedido de oração</a></li>
+          <li><a href="index.html#oracoes">Orações</a></li>
+          <li><a href="index.html#agenda">Adoração</a></li>
+          <li><a href="https://whatsapp.com/channel/0029VaDxDVgDzgTH6yd3kF20" target="_blank" rel="noopener">Canal no WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">Paróquia · Diocese</a></li>
+          <li><a href="pedido.html">Enviar mensagem</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Padre Vanderson. Todos os direitos reservados.</span>
+      <span><a href="#">Política de privacidade</a> · Feito com fé e cuidado.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" aria-label="Fechar" data-lb-close>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__prev" aria-label="Foto anterior" data-lb-prev>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <img src="" alt="">
+  <button class="lightbox__nav lightbox__next" aria-label="Próxima foto" data-lb-next>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <p class="lightbox__cap" id="lbCap"></p>
+</div>
+
+<script src="galeria-data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

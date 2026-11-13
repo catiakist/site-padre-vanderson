@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido de oração · Padre Vanderson</title>
+<meta name="description" content="Deixe aqui a sua intenção. Cada pedido de oração é levado à oração diária e à Santa Missa do Padre Vanderson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/img/brasao-escudo.png">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest-line" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 18 H76 V50 C76 71 61 83 50 89 C39 83 24 71 24 50 Z"/>
+      <path d="M50 18 V86"/>
+      <path d="M25 45 H75"/>
+    </g>
+  </symbol>
+  <symbol id="dove" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 56c10-4 20-3 30 1 4-9 13-14 23-14-6 4-9 11-9 19-10-2-20 1-27 8-5-6-11-11-17-14z"/>
+      <path d="M50 76c0 6-2 12-6 17M50 76c0 6 2 12 6 17M50 76c0 7 0 13 0 19"/>
+      <circle cx="70" cy="59" r="1.6" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ============================ CABEÇALHO ============================ -->
+<header class="site-header" id="topo">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="index.html" aria-label="Padre Vanderson — início">
+      <img class="brand__crest" src="assets/img/brasao.png" alt="Brasão do Padre Vanderson" width="48" height="58">
+      <span class="brand__name">Padre Vanderson<small>Oração &amp; Formação</small></span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="index.html">Início</a></li>
+      <li><a class="nav-link" href="index.html#conheca">Padre Vanderson</a></li>
+      <li><a class="nav-link" href="index.html#oracoes">Espiritualidade</a></li>
+      <li><a class="nav-link" href="index.html#formacao">Formação</a></li>
+      <li><a class="nav-link" href="index.html#destaque">Conteúdos</a></li>
+      <li><a class="nav-link" href="index.html#agenda">Agenda</a></li>
+      <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a class="btn btn--wine" href="#formulario">Fazer meu pedido</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" data-menu-open>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" aria-label="Fechar menu" data-menu-close>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+  </button>
+  <ul>
+    <li><a href="index.html" data-menu-close>Início</a></li>
+    <li><a href="index.html#conheca" data-menu-close>Padre Vanderson</a></li>
+    <li><a href="index.html#oracoes" data-menu-close>Espiritualidade</a></li>
+    <li><a href="index.html#formacao" data-menu-close>Formação</a></li>
+    <li><a href="index.html#destaque" data-menu-close>Conteúdos</a></li>
+    <li><a href="index.html#agenda" data-menu-close>Agenda</a></li>
+    <li><a href="index.html#contato" data-menu-close>Contato</a></li>
+  </ul>
+  <a class="btn btn--wine" href="#formulario" data-menu-close>Fazer meu pedido</a>
+</div>
+
+<!-- ============================ TOPO DA PÁGINA ============================ -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <p class="crumb"><a href="index.html">Início</a> · Pedido de oração</p>
+    <img class="page-hero__mark" src="assets/img/brasao.png" alt="" aria-hidden="true">
+    <h1>Pedido de oração</h1>
+    <p>Escreva a sua intenção. Vou levá-la à minha oração diária e à Santa Missa. Você não reza sozinho.</p>
+  </div>
+</section>
+
+<!-- ============================ FORMULÁRIO ============================ -->
+<section class="section band-ivory" id="formulario">
+  <div class="container pedido__grid">
+
+    <!-- coluna: mensagem e garantias -->
+    <aside class="pedido-aside reveal">
+      <p class="eyebrow">Uma palavra minha</p>
+      <h2>Pode confiar a Deus o que pesa no coração.</h2>
+      <p>Recebo cada pedido com carinho e sigilo. Não importa o tamanho da intenção — Deus se importa com você, e eu rezo por cada nome que chega até aqui.</p>
+      <ul class="assur">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <span><b>Tratado com sigilo</b>Seu pedido é lido com respeito e não é divulgado.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 4h10M9 4v3a3 3 0 0 0 6 0V4M12 10v6M8 20h8" stroke-linecap="round"/></svg>
+          <span><b>Levado à Santa Missa</b>As intenções são lembradas na celebração e na adoração.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9-9C1.6 7.5 4 4 7.5 4 10 4 12 6.5 12 6.5S14 4 16.5 4C20 4 22.4 7.5 21 11c-2 4.5-9 9-9 9z" stroke-linejoin="round"/></svg>
+          <span><b>Você pode ser avisado</b>Deixe o e-mail se quiser receber uma palavra de conforto.</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- coluna: formulário -->
+    <div class="reveal">
+      <form class="form-card" id="prayerForm" novalidate>
+        <input type="hidden" name="_subject" value="Novo pedido de oração (pelo site)">
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" name="Nome" placeholder="Como posso te chamar?" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="intencao">Sua intenção</label>
+          <textarea id="intencao" name="Intenção" placeholder="Escreva aqui o que você quer entregar a Deus…" required></textarea>
+        </div>
+
+        <div class="field">
+          <label>Pelo que vamos rezar? <span class="opt">(opcional)</span></label>
+          <div class="choice">
+            <label><input type="radio" name="Assunto" value="Saúde"> Saúde</label>
+            <label><input type="radio" name="Assunto" value="Família"> Família</label>
+            <label><input type="radio" name="Assunto" value="Trabalho e finanças"> Trabalho e finanças</label>
+            <label><input type="radio" name="Assunto" value="Vida espiritual"> Vida espiritual</label>
+            <label><input type="radio" name="Assunto" value="Ação de graças"> Ação de graças</label>
+            <label><input type="radio" name="Assunto" value="Outra intenção"> Outra intenção</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail <span class="opt">(opcional — para receber uma resposta)</span></label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email">
+        </div>
+
+        <p class="form-error" id="formError" role="alert" hidden></p>
+        <div class="form-actions">
+          <button class="btn btn--wine" type="submit">Enviar meu pedido
+            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="form-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Seu pedido é enviado com sigilo, direto para o Padre Vanderson. Não aparece publicamente no site.
+        </p>
+      </form>
+
+      <!-- confirmação -->
+      <div class="success-panel" id="prayerSuccess" hidden>
+        <img class="success-panel__mark" src="assets/img/brasao.png" alt="" aria-hidden="true">
+        <h2>Recebi o seu pedido<span id="successName"></span>.</h2>
+        <p>Fique em paz: a sua intenção já chegou até mim e entra na minha oração. Que o coração de Deus cuide de você e de quem você ama.</p>
+        <div class="form-actions">
+          <a class="btn btn--wine" href="index.html">Voltar ao início</a>
+          <button class="btn btn--ghost-dark" type="button" id="sendAgain">Enviar outro pedido</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ RODAPÉ ============================ -->
+<footer class="site-footer" id="contato">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Padre Vanderson">
+          <img class="brand__crest" src="assets/img/brasao.png" alt="Brasão do Padre Vanderson" width="48" height="58">
+          <span class="brand__name">Padre Vanderson<small>Oração &amp; Formação</small></span>
+        </a>
+        <p>Um espaço de oração, direção espiritual e formação para caminhar mais perto de Deus.</p>
+        <div class="footer__social">
+          <a href="https://www.youtube.com/channel/UCvTfDBISUCdvA43TUDEplZA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.5 31 31 0 0 0-.4-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          <a href="https://www.instagram.com/padrevanderson" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://whatsapp.com/channel/0029VaDxDVgDzgTH6yd3kF20" target="_blank" rel="noopener" aria-label="Canal no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm0 16.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A7.3 7.3 0 1 1 12 19.3zm4.1-5.5c-.2-.1-1.3-.7-1.6-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6 6 0 0 1-3-2.6c-.2-.4.2-.4.6-1.2v-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5 0-.7.3-.9.9-1.1 2.1-.4 3.4a8 8 0 0 0 4.6 4c.4.1.8.1 1.1 0 .6-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="index.html#conheca">Padre Vanderson</a></li>
+          <li><a href="index.html#oracoes">Espiritualidade</a></li>
+          <li><a href="index.html#formacao">Formação</a></li>
+          <li><a href="index.html#destaque">Conteúdos</a></li>
+          <li><a href="index.html#agenda">Agenda</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Reze</h4>
+        <ul>
+          <li><a href="pedido.html">Pedido de oração</a></li>
+          <li><a href="index.html#oracoes">Orações</a></li>
+          <li><a href="index.html#agenda">Adoração</a></li>
+          <li><a href="https://whatsapp.com/channel/0029VaDxDVgDzgTH6yd3kF20" target="_blank" rel="noopener">Canal no WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">Paróquia · Diocese</a></li>
+          <li><a href="pedido.html">Enviar mensagem</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Padre Vanderson. Todos os direitos reservados.</span>
+      <span><a href="#">Política de privacidade</a> · Feito com fé e cuidado.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
