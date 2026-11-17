@@ -104,7 +104,7 @@ collections:
           - { label: "Instagram", name: "instagram", widget: "string" }
           - { label: "Canal do WhatsApp", name: "whatsapp_canal", widget: "string" }
       - name: "dev_saomiguel"
-        label: "Devoção: Consagração a São Miguel"
+        label: "Devoção: Consagração total à Virgem Maria"
         file: "content/config/dev-saomiguel.json"
         fields:
           - { label: "Título", name: "titulo", widget: "string" }

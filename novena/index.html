@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#103653" />
+  <meta name="description" content="Novena de Nossa Senhora das Graças, de 18 a 26 de novembro. Reze os nove dias e acompanhe ao vivo com Padre Vanderson e Cátia Kist, às 21h." />
+  <title>Novena de Nossa Senhora das Graças | Padre Vanderson</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Novena de Nossa Senhora das Graças | Padre Vanderson" />
+  <meta property="og:description" content="De 18 a 26 de novembro, reze conosco os nove dias da novena e acompanhe as lives às 21h." />
+  <!-- Ao publicar, atualize og:image com a URL absoluta de sua hospedagem para melhorar a prévia no WhatsApp. -->
+  <meta property="og:image" content="assets/nossa-senhora-medalha-milagrosa.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="content.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="?" aria-label="Página inicial da novena"><span class="brand-mark">✧</span><span>Padre Vanderson <small>Novena de Nossa Senhora das Graças</small></span></a>
+      <nav aria-label="Menu"><a href="#dias">Os nove dias</a><a href="#ao-vivo">Ao vivo</a><a href="#pedido">Mural de orações</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> 18 A 26 DE NOVEMBRO <span class="eyebrow-line"></span></div>
+          <div class="hero-ornament" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</div>
+          <h1>Novena de<br><em>Nossa Senhora</em><br>das <em>Graças</em></h1>
+          <p class="hero-sub">Nove dias de fé, esperança e confiança na intercessão de Maria.</p>
+          <div class="hero-actions"><button id="todayButton" class="button button-gold">Rezar o dia de hoje <span aria-hidden="true">→</span></button><a href="#dias" class="button button-outline">Ver os nove dias</a></div>
+          <div class="hero-note">Celebração de Nossa Senhora das Graças • 27 de novembro</div>
+        </div>
+        <figure class="hero-art">
+          <picture>
+            <source srcset="assets/nossa-senhora-medalha-milagrosa.webp" type="image/webp" />
+            <img src="assets/nossa-senhora-medalha-milagrosa.png" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Imagem devocional de Nossa Senhora das Graças, com as mãos abertas irradiando luz, doze estrelas e uma representação dourada da Medalha Milagrosa ao lado." />
+          </picture>
+          <figcaption>Ilustração devocional inspirada na iconografia da Medalha Milagrosa.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="intro shell" aria-label="Convite">
+      <div class="intro-symbol">✧</div>
+      <p>“Ó Maria concebida sem pecado, rogai por nós que recorremos a vós.”</p>
+      <span>Uma caminhada de oração com Maria, que sempre nos conduz a Jesus.</span>
+    </section>
+    <section id="dias" class="section shell">
+      <div class="section-heading"><span class="kicker">NOSSO CAMINHO DE FÉ</span><h2>Os nove dias da novena</h2><p>Escolha o dia para acompanhar a oração. Seu progresso fica salvo neste navegador.</p></div>
+      <div id="daysGrid" class="days-grid" aria-label="Selecionar dia"></div>
+    </section>
+    <section id="oracao" class="prayer-wrap shell" aria-live="polite">
+      <div class="prayer-top"><div><span class="kicker">CAMINHO DE ORAÇÃO</span><h2 id="prayerTitle">Primeiro dia</h2><p id="prayerDate"></p></div><div class="font-tools"><span>Tamanho do texto</span><button id="smallerFont" aria-label="Diminuir o texto">A−</button><button id="largerFont" aria-label="Aumentar o texto">A+</button></div></div>
+      <div class="prayer-body" id="prayerBody"></div>
+      <div class="prayer-footer"><label class="complete"><input id="completed" type="checkbox" /><span>Concluí minha oração deste dia</span></label><div class="prayer-actions"><button id="shareDay" class="button button-blue">Compartilhar no WhatsApp</button><button id="nextDay" class="button button-outline-dark">Próximo dia →</button></div></div>
+      <p id="progressText" class="progress-text"></p>
+    </section>
+    <section id="ao-vivo" class="live-section">
+      <div class="shell live-layout"><div class="live-copy"><span class="kicker light">UM CONVITE ESPECIAL</span><h2>Vamos rezar <em>juntos</em>?</h2><p>De 18 a 26 de novembro, acompanhe a Novena de Nossa Senhora das Graças <strong>todos os dias, às 21h</strong>, ao vivo pelo Instagram, com Padre Vanderson e Cátia Kist.</p><div class="live-buttons"><a class="button button-gold" href="https://www.instagram.com/padrevanderson/" target="_blank" rel="noopener noreferrer">Instagram do Padre Vanderson ↗</a><a class="button button-outline" href="https://www.instagram.com/catiakist/" target="_blank" rel="noopener noreferrer">Instagram de Cátia Kist ↗</a></div></div><img src="assets/convite-novena.png" alt="Convite da Novena de Nossa Senhora das Graças, com Padre Vanderson e Cátia Kist: 18 a 26 de novembro, às 21h, pelo Instagram" loading="lazy" /></div>
+    </section>
+    <section id="pedido" class="section shell mural-section">
+      <div class="section-heading"><span class="kicker">JUNTOS EM ORAÇÃO</span><h2>Mural de pedidos de oração</h2><p>Apresente sua intenção a Nossa Senhora das Graças. Quem visitar este mural também poderá interceder por você.</p></div>
+      <div class="mural-layout">
+        <form id="requestForm" class="request-form">
+          <h3>Deixe sua intenção</h3>
+          <label>Como deseja aparecer no mural? <span>(opcional)</span><input name="nome" maxlength="60" placeholder="Seu primeiro nome ou 'Anônimo'" /></label>
+          <label>Seu pedido de oração <span>(obrigatório)</span><textarea name="pedido" minlength="10" maxlength="700" rows="5" required placeholder="Escreva sua intenção de oração..."></textarea></label>
+          <div class="public-warning" role="note"><span aria-hidden="true">ⓘ</span><div><strong>Atenção: este é um mural público.</strong><p>Seu nome (se informado) e seu pedido poderão ser lidos por qualquer pessoa que acessar este site. Outros visitantes poderão rezar e interceder por sua intenção. Não escreva telefone, endereço, informações médicas detalhadas nem dados pessoais seus ou de outras pessoas.</p></div></div>
+          <label class="consent-check"><input name="consentimento" type="checkbox" required /><span>Estou ciente de que meu pedido será exibido publicamente neste mural e poderá ser lido por outras pessoas.</span></label>
+          <div class="hidden-trap" aria-hidden="true"><label>Deixe em branco<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+          <button class="button button-blue" type="submit">Publicar pedido no mural →</button>
+          <p id="requestStatus" role="status" aria-live="polite"></p>
+        </form>
+        <div class="mural-board"><div class="mural-header"><div><span class="kicker">INTENÇÕES COMPARTILHADAS</span><h3>Vamos interceder uns pelos outros</h3></div><span class="mural-symbol">✧</span></div><div id="muralStatus" class="mural-info"></div><div id="muralPosts" class="mural-posts"></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell"><span>✧</span><p>Novena de Nossa Senhora das Graças</p><small>De 18 a 26 de novembro • Com Padre Vanderson e Cátia Kist</small></div></footer>
+</body>
+</html>
