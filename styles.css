@@ -646,3 +646,10 @@ a,button,.gallery__item,.album,.qcard,.event,.article-card{-webkit-tap-highlight
 .artigo__body ul{margin:0 0 1.1em 1.2em;} .artigo__body li{margin:.3em 0;}
 .artigo__body blockquote{margin:1.4em 0;padding:.6em 1.2em;border-left:3px solid var(--ouro,#b3924c);font-style:italic;color:#5b5750;}
 .artigo__back{margin-top:2.5rem;}
+
+/* ===== Banner da Novena ===== */
+.section-banner{padding:26px 0 2px;}
+.section-banner .container{max-width:1040px;}
+.section-banner a{display:block;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(18,53,91,.14);transition:transform .15s ease,box-shadow .15s ease;}
+.section-banner a:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(18,53,91,.2);}
+.section-banner img{width:100%;height:auto;display:block;}
