@@ -1,7 +1,7 @@
 const CONFIG = {
   // Configure no Supabase para compartilhar as intenções entre todos os visitantes.
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  supabaseUrl: 'https://vjccdnwgaeytdppbhtgb.supabase.co',
+  supabaseAnonKey: 'sb_publishable_eo5n00wo3lSwtWu2EvKoiA_HTRJGu6R',
   year: 2026,
 };
 const $ = (s) => document.querySelector(s);
