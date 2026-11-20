@@ -94,3 +94,13 @@ for(const [k,f] of [["saomiguel","dev-saomiguel.json"],["novena","dev-novena.jso
 }
 writeFileSync("devocoes-data.js", "/* Gerado por build-site.mjs — nao edite a mao. */\nwindow.DEVOCOES = "+JSON.stringify(_dev)+";\n");
 console.log("devocoes-data.js gerado.");
+
+
+/* ---- Vídeos da Novena (gera videos-data.js p/ os dois sites) ---- */
+{
+  const v = cfg("videos-novena.json", {});
+  const map = {};
+  for (let i=1;i<=9;i++){ const u=(v["dia"+i]||"").trim(); if(u) map[i]=u; }
+  writeFileSync("videos-data.js", "/* Gerado por build-site.mjs */\nwindow.NOVENA_VIDEOS = "+JSON.stringify(map)+";\n");
+  console.log("videos-data.js gerado com", Object.keys(map).length, "video(s).");
+}

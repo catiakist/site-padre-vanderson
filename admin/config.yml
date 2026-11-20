@@ -115,3 +115,16 @@ collections:
         fields:
           - { label: "Título", name: "titulo", widget: "string" }
           - { label: "Texto da devoção", name: "corpo", widget: "markdown", required: false, hint: "Deixe em branco por enquanto; preencha quando quiser publicar." }
+      - name: "videos_novena"
+        label: "Vídeos da Novena (um por dia)"
+        file: "content/config/videos-novena.json"
+        fields:
+          - { label: "Dia 1 — 18/11 — link do vídeo", name: "dia1", widget: "string", required: false, hint: "Cole o link do YouTube ou do Instagram. Deixe em branco se ainda não houver vídeo." }
+          - { label: "Dia 2 — 19/11 — link do vídeo", name: "dia2", widget: "string", required: false }
+          - { label: "Dia 3 — 20/11 — link do vídeo", name: "dia3", widget: "string", required: false }
+          - { label: "Dia 4 — 21/11 — link do vídeo", name: "dia4", widget: "string", required: false }
+          - { label: "Dia 5 — 22/11 — link do vídeo", name: "dia5", widget: "string", required: false }
+          - { label: "Dia 6 — 23/11 — link do vídeo", name: "dia6", widget: "string", required: false }
+          - { label: "Dia 7 — 24/11 — link do vídeo", name: "dia7", widget: "string", required: false }
+          - { label: "Dia 8 — 25/11 — link do vídeo", name: "dia8", widget: "string", required: false }
+          - { label: "Dia 9 — 26/11 — link do vídeo", name: "dia9", widget: "string", required: false }
