@@ -1,0 +1,14 @@
+/* enquadramento do preview do artigo no painel */
+.preview-page{
+  background:var(--ivory,#F4E9D5);
+  min-height:100%;
+  padding:32px 0;
+}
+.preview-artigo{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 28px;
+  color:var(--ink,#2B241C);
+}
+.preview-artigo .eyebrow{margin-bottom:.4rem}
+.preview-artigo img{border-radius:12px}
