@@ -3,7 +3,10 @@ title: Exame de consciência para confissão
 date: 2026-11-22
 tag: Catequese
 image: assets/artigos/02d330e4-f7ad-4aae-b2ab-1450b72ee4e9.png
-excerpt: "\n\n"
+excerpt: >+
+  O exame de consciência é uma revisão sincera de pensamentos, palavras, ações e
+  omissões para avaliar alinhamento ou falha em relação aos próprios valores
+  morais ou preceitos espirituais.
 ---
 #### Reserve um tempo adequado para seu exame de consciência. Escolha um local privativo, com silêncio e evite qualquer distração. Se estiver usando o celular, desabilite as notificações ou ponha em modo avião por esse período. Responda cada questionamento com sinceridade e verdade. Anote em um papel todos os pecados que você responder “sim”, pois para cada pergunta deste exame, a resposta “sim” significa que o pecado foi cometido.
 
