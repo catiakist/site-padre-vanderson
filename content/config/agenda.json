@@ -1,25 +1,46 @@
 {
   "encontros": [
     {
-      "dia": "14",
+      "dia": "29",
       "mes": "Nov",
-      "titulo": "Missa Com. São Marcos",
+      "titulo": "Missa Com. Nossa Senhora Rainha",
       "descricao": "Venha celebrar conosco! ",
-      "hora": "16h00"
+      "hora": "10h00"
     },
     {
-      "dia": "14",
-      "mes": "Nov",
-      "titulo": "Missa Com. Santa Tecla",
+      "dia": "01",
+      "mes": "Dez",
+      "titulo": "Missa Matriz",
       "descricao": "Venha celebrar conosco! ",
+      "hora": "18h15"
+    },
+    {
+      "dia": "02",
+      "mes": "Dez",
+      "titulo": "Atendimento Matriz",
+      "descricao": "Dia de atendimento",
+      "hora": "14h00"
+    },
+    {
+      "dia": "03",
+      "mes": "Dez",
+      "titulo": "Missa em Encruzilhada do Sul",
+      "descricao": "Venha celebrar conosco!",
+      "hora": "19h00"
+    },
+    {
+      "dia": "05",
+      "mes": "Dez",
+      "titulo": "Missa na Matriz",
+      "descricao": "Venha celebrar conosco!",
       "hora": "18h00"
     },
     {
-      "dia": "15",
-      "mes": "Nov",
-      "titulo": "Missa Com. São Lucas",
-      "descricao": "Venha celebrar conosco! ",
-      "hora": "08h00"
+      "dia": "06",
+      "mes": "Dez",
+      "titulo": "Missa na Matriz",
+      "descricao": "Venha celebrar conosco!",
+      "hora": "08h30"
     }
   ]
 }
